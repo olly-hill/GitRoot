@@ -35,7 +35,10 @@ const updateData = async ()  => {
 
   console.log('Read data from database.\n\n');
   
-  const doc = await container.item('e0eb6e85-176d-4ce6-89ae-1f699aaa0bab');
+  var funds = ['e0eb6e85-176d-4ce6-89ae-1f699aaa0bab','ebe2e863-bf84-439a-89f8-39975e7d6766','80bc1751-3831-4749-99ea-5c6a63105ae7','80561751-3831-4749-99ea-5c6a12345ae7'];
+
+  //const doc = await container.item('e0eb6e85-176d-4ce6-89ae-1f699aaa0bab');
+  const doc = await container.item(funds[parseInt(funds.length * Math.random())]);
 
   const { body: existingStock } = await doc.read();
 
